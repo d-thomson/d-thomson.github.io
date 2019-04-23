@@ -168,4 +168,24 @@ git init
 
 ## Tips, Tricks and Interview Questions
 
-Here are some tips, tricks and common interview questions.
+#### Useful Tips & Tricks
+built-in git GUI
+gitk
+use colorful git output
+git config color.ui true
+show log on just one line per commit
+git config format.pretty oneline
+use interactive adding
+git add -i
+
+#### Common Interview Questions
+
+This is an interview questions
+<details>
+<summary>Solution</summary><p>
+ 
+This is a solution
+~~~
+git log -1
+~~~
+</p></details>
