@@ -42,6 +42,50 @@ Once you have cloned a repository, you will notice that the end of the directory
 
 #### Workflow
 
+Your local repository consists of three "trees" maintained by git. the first one is your Working Directory which holds the actual files. the second one is the Index which acts as a staging area and finally the HEAD which points to the last commit you've made.
+
+
+#### Adding files
+
+
+#### Commit
+
+
+#### Push
+
+
+#### Branching
+
+Branches are used to develop features that are isolated from each other. By default, the master branch is the initial head where you created your repository. You can use other branches to develop features then merge them back into an upstream branch once completed.
+ 
+We can create a new branch by using the checkout command. Checkout allows us to switch  between branches in our local repository or create new ones. To create a new branch, use checkout with the -b flag.
+~~~
+git checkout -b mybranch
+~~~
+
+Branches also stay local to you unless you specifically push the branch to your remote repository
+~~~
+git push origin mybranch
+~~~
+
+If we want to switch back to the master branch, we just need to specify the name of the branch in the checkout command. 
+~~~ 
+git checkout master
+~~~
+If we are completed with our work in a branch, we want to merge it to an upstream branch and delete any hanging branches. To delete a branch, we can use checkout with the -d flag.
+~~~
+git merge mybranch
+git branch -d mybranch
+~~~
+
+#### Update
+
+#### Merge
+
+#### Tags
+
+#### Recovery
+
 
 ## Example
 
