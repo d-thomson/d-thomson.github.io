@@ -21,7 +21,14 @@ Once installed and configured for your architecture, you can confirm the install
 git --version
 ~~~
 
-This will print the version to the console. If you do not see the version number, you may need to manually add git's bin directory to your PATH environment variable.
+This will print the version to the console. If you do not see the version number, you may need to manually add git's bin directory to your PATH environment variable. You will also have to tell git who you are for authentication purposes. First, you shuld create a github account, since you will need this to work through the example.
+
+[Join Github](https://github.com/join)
+
+~~~
+git config --global user.name "Jane Doe"
+git config --global user.email jdoe44@gatech.edu
+~~~
 
 #### New Repository
 
@@ -64,7 +71,7 @@ git reset myfile.rb
 ~~~
 
 #### Commit & Push
-Once you have proposed changes in your index, you can commit these files to HEAD. Commits require a message, you can add one using a text editor or by using the `-m` flag to specify your message in the commit command.
+Once you have proposed changes in your index, you can commit these files to HEAD. Commits [require a message](https://xkcd.com/1296/), you can add one using a text editor or by using the `-m` flag to specify your message in the commit command.
 ~~~
 git commit -m "Committing some changes..."
 ~~~
@@ -93,28 +100,50 @@ If we want to switch back to the master branch, we just need to specify the name
 git checkout master
 ~~~
 
-If we are completed with our work in a branch, we want to merge it to an upstream branch and delete any hanging branches. To delete a branch, we can use checkout with the -d flag.
-~~~
-git merge mybranch
-git branch -d mybranch
-~~~
 
 #### Update & Merge
-To update your working copy to the latest commit, we can use the `pull` command. This pull down any changes that have been made to the remote repo since your last pull.
+To update your working copy to the latest commit, we can use the `pull` command. This pulls down any changes that have been made to the remote repo since your last pull.
 ~~~
 git pull
 ~~~
 
-This always doesn't meld well as multiple users could be using a 
-to merge another branch into your active branch (e.g. master), use
-git merge <branch>
-in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in conflicts. You are responsible to merge those conflicts manually by editing the files shown by git. After changing, you need to mark them as merged with
-git add <filename>
-before merging changes, you can also preview them by using
-git diff <source_branch> <target_branch>
-#### Tags
+Git will always attempt to auto-merge whenever you pull, however, sometimes this doesn't meld well. Multiple users could be modifying a file and overwriting the same lines that you have in your local copy causing conflicts.
+```
+git merge mybranch
+```
+
+You will have to manually resolve any conflicts in each file and confirm they are merged by adding them to your index. 
+```
+git add myfile.rb
+```
+
+A useful command for dealing with merges is to use the git diff feature between two branches.
+```
+git diff mybranch anotherbranch
+```
+ 
+#### Tags & Log
+It is common practice to tag your versions for release. You can create a new tag, for example v1.0, using the tag command.
+```
+git tag v1.0
+```
+
+To view a repositories history, you can use the log command. This will print every commit, you can specify to only print a persons commits or even just grab the latest commit id, or a combination of both.
+```
+git log
+git log -1
+git log --author=jdoe44@gatech.edu
+git log -1 --author="Jane Doe"
+```
 
 #### Recovery
+In case you did something wrong, which for sure never happens ;), you can replace local changes using the command
+git checkout -- <filename>
+this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+
+If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this
+git fetch origin
+git reset --hard origin/master
 
 #### Reference
 Above was a quick overview of git. The full reference guide can be found here.
@@ -122,6 +151,8 @@ Above was a quick overview of git. The full reference guide can be found here.
 [git Documentation](https://git-scm.com/docs)
 
 ## Example
+
+This section contains a worked example to get you more acquainted with git.
 
 Create a new folder, and initialize a repository.
 <details>
