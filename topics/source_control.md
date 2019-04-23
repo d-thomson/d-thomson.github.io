@@ -45,14 +45,34 @@ Once you have cloned a repository, you will notice that the end of the directory
 Your local repository consists of three "trees" maintained by git. the first one is your Working Directory which holds the actual files. the second one is the Index which acts as a staging area and finally the HEAD which points to the last commit you've made.
 
 
-#### Adding files
+#### Staging
 
+To add files to your index, where you will be proposing your changes, you can use the add command.
+~~~
+git add myfile.rb
+~~~
 
-#### Commit
+You can also add any files in bulk that contain changes between your working directory and HEAD. To add all use the `*` modifier. You can add entire subdirectories by specifying a path.
+~~~
+git add *
+git add path/to/dir/*
+~~~
 
+If you need to remove some files from your index, you can use the reset command.
+~~~
+git reset myfile.rb
+~~~
 
-#### Push
+#### Commit & Push
+Once you have proposed changes in your index, you can commit these files to HEAD. Commits require a message, you can add one using a text editor or by using the `-m` flag to specify your message in the commit command.
+~~~
+git commit -m "Committing some changes..."
+~~~
 
+Now that we've committed some files to HEAD, our local working copy, we can send these changes to the remote repository using the `push` command.
+~~~
+git push
+~~~
 
 #### Branching
 
@@ -72,24 +92,48 @@ If we want to switch back to the master branch, we just need to specify the name
 ~~~ 
 git checkout master
 ~~~
+
 If we are completed with our work in a branch, we want to merge it to an upstream branch and delete any hanging branches. To delete a branch, we can use checkout with the -d flag.
 ~~~
 git merge mybranch
 git branch -d mybranch
 ~~~
 
-#### Update
+#### Update & Merge
+To update your working copy to the latest commit, we can use the `pull` command. This pull down any changes that have been made to the remote repo since your last pull.
+~~~
+git pull
+~~~
 
-#### Merge
-
+This always doesn't meld well as multiple users could be using a 
+to merge another branch into your active branch (e.g. master), use
+git merge <branch>
+in both cases git tries to auto-merge changes. Unfortunately, this is not always possible and results in conflicts. You are responsible to merge those conflicts manually by editing the files shown by git. After changing, you need to mark them as merged with
+git add <filename>
+before merging changes, you can also preview them by using
+git diff <source_branch> <target_branch>
 #### Tags
 
 #### Recovery
 
+#### Reference
+Above was a quick overview of git. The full reference guide can be found here.
+
+[git Documentation](https://git-scm.com/docs)
 
 ## Example
 
-Here is a worked example.
+Create a new folder, and initialize a repository.
+<details>
+<summary>Solution</summary><p>
+ 
+~~~
+mkdir git-tutorial
+cd git-tutorial
+git init
+~~~
+</p></details>
+   
 
 ## Tips, Tricks and Interview Questions
 
