@@ -44,7 +44,7 @@ On this page, you will see the results of the commands that we specified in our 
 This is important since we can see from here where Jenkins is installed and where our executions are running. In the next section, we'll deploy a small Java program and run unit tests from Jenkins.
 
 #### Unit Testing
-Unit testing with JUnit
+As mentioned earlier, Jenkins comes with many plugins. The one we will be using for this section is called xUnit, which allows one to publish test results from JUnit.
 
 #### Automated Testing
 
