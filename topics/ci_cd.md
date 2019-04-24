@@ -44,7 +44,25 @@ On this page, you will see the results of the commands that we specified in our 
 This is important since we can see from here where Jenkins is installed and where our executions are running. In the next section, we'll deploy a small Java program and run unit tests from Jenkins.
 
 #### Unit Testing
-As mentioned earlier, Jenkins comes with many plugins. The one we will be using for this section is called xUnit, which allows one to publish test results from JUnit.
+As mentioned earlier, Jenkins offers and also ships with many plugins. The one in particular for this section is JUnit. We will be using Jenkins to kick off our unit tests for some Sample Java files. First, download the two Java files and build file below and place them in `<Jenkins Install Dir>/workspace/Tutorial Build Job`, also create a `Reports` directory where we will store our output. If you are unsure of this location, check the console output from the previous section, it will be located in the console output of the build job.
+
+[Sample.java](google.com)
+[SampleTest.java](google.com)
+[build.xml](google.com)
+
+The Sample java file outputs "Hello, world!" to the console but also contains some methods that will be tested using some JUnit tests in the SampleTest.java file. First, navigate to the build job we previously created. Modify the Windows Batch command to first compile Sample.java then run it.
+
+![](../img/run_cmd.PNG?raw=true "Changing the build job")
+
+Next, we will enter the ant build.xml file in another step. Select **Add build step** then **Invoke Ant**. Enter the path to the build.xml file under the **Advanced** section.
+
+![](../img/invoke_ant.PNG?raw=true "invoke ant")
+
+Finally, we'll add a **Post build step** and specify our reporting XML files. For this, select Publish JUnit test result report under Post-build Actions. Enter `Reports/*.xml` in the Test report XMLs field.
+
+![](../img/reporting.PNG?raw=true "reporting XMLs")
+
+Finally, click save and click build now similar to the previous section. In the Build output information, you will now see a section named Test Result. Clicking into this, we'll see that we had 1 JUnit test fail. In the next section, we'll see an example of running automated tests from a build job.
 
 #### Automated Testing
 
