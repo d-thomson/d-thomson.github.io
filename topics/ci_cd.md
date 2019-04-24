@@ -24,10 +24,10 @@ const x = 1
 
 <details>
 <summary>Click me!</summary>
-  <p>
+  <code>
 
 ```js
 const x = 1
 ```
-  </p>
+  </code>
 </details>
