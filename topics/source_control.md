@@ -188,33 +188,93 @@ In this section we will get the feel of working with the basic git workflow. Try
 <summary>Solution</summary>
 <p>
 
-Hidden!
+~~~
+# 2
+mkdir my-dir
+cd my-dir
+
+# 3, 4
+git clone https://github.com/d-thomson/git-tutorial.git my-repo
+cd my-repo
+
+# 5, 6
+touch readme.md
+echo git is easy! >> readme.md
+git add readme.md
+git commit -m "Added readme"
+
+# 7, 8
+git checkout -b dev
+touch my_file.rb
+echo puts 'Hello, world!' >> my_file.md
+
+# 9
+git add my_file.rb
+git commit -m "my_file.rb"
+
+# 10, 11
+git checkout master
+echo sort of easy... >> readme.md
+
+# 12
+git add readme.md
+git commit -m "Changes to readme"
+
+# 13
+git merge dev -m "Merging dev to master"
+
+# 14
+git log -1
+git tag v1.0 <hash>
+
+# 15
+git push origin dev
+git push
+~~~
 </p></details>
    
 
 ## Tips, Tricks and Interview Questions
 
 #### Useful Tips & Tricks
-built-in git GUI
+Git comes with a built-in GUI. It can be launched from the terminal wiht the following command.
+~~~
 gitk
+~~~
 
-use colorful git output
+Syntax highlighting for git output
+~~~
 git config color.ui true
+~~~
 
-show log on just one line per commit
+Show the log on one line per commit
+~~~
 git config format.pretty oneline
+~~~
 
-use interactive adding
+Use interactive adding
+~~~
 git add -i
+~~~
 
 #### Common Interview Questions
 
-This is an interview questions
-<details>
-<summary>Solution</summary><p>
- 
-This is a solution
-~~~
-git log -1
-~~~
-</p></details>
+1. What is a conflict in git
+
+A conflict in git arises when a merge between branches have differing changes on the same line of a file. They can also occur when one branch contains a file deletion however changes are made in the other branch.The auto-merge will fail since precendence cannot be determined.
+
+2. How are conflicts resolved?
+
+The user will need to resolve git conflicts manually before merging branches. First, they must edit the files to fix the conflicting changes. Next, they will need to add the resolved files to their index by running `git add` and finally committing the repaired merge using `git commit`.
+
+3. What is git stash?
+
+The stash command takes the current state of your working directory and index, and places them on a stack. The working directory is cleaned and your edits are stashed for later. This will revert you to the HEAD commit, you can view your stash stack with `list`, drop stack entries with `drop` and even checkout stashed entries to a new branch with `branch`.
+
+4. What is the difference between git pull and git fetch?
+
+The fetch command will pull all new commits from the desired branch and store them in a new branch in your local repository. To update your local repository with these changes, you will need to merge the fetched branch with the target branch. The git pull command does these operations simultaneously, the pull command will always attempt to auto-merge your target branch with the most recent commit.
+
+5. What does git config do?
+
+The config command allows you to set options for your git installation. Repository behavior, user and authentication information, and preferences can all be set through this command.
