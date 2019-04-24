@@ -14,20 +14,8 @@ Here are some tips, tricks and common interview questions.
 
 <details>
 <summary>Click me!</summary>
-
-```js
-const x = 1
-```
-</details>
-
-
-
-<details>
-<summary>Click me!</summary>
   <code>
-
-```js
-const x = 1
-```
+this is a line
+this is another line
   </code>
 </details>
