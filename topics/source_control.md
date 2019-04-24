@@ -184,7 +184,9 @@ In this section we will get the feel of working with the basic git workflow. Try
 15. Push all branches to the remote repository.
 
 
-<details><summary>Solution</summary><p>
+<details>
+<summary>Solution</summary>
+<p>
 
 ~~~
 # 2
