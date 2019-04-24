@@ -53,8 +53,13 @@ Once you have cloned a repository, you will notice that the end of the directory
 
 #### Workflow
 
-Your local repository consists of three "trees" maintained by git. the first one is your Working Directory which holds the actual files. the second one is the Index which acts as a staging area and finally the HEAD which points to the last commit you've made.
+Once you have a repository created, locally speaking, you have three trees that are maintained by git. The first is the working directory. This holds your actual files on your system. The second is the index or staging area. This is what will house your local changes. The third is HEAD, this will point to the last commit that you have made.
 
+The typical workflow is illustrated below:
+
+![](../img/git_workflow.PNG?raw=true "Typical git workflow")
+
+The intermediary commands for moving data are described in further detail next, but knowing these distinct locations are crucial to understanding git. 
 
 #### Staging
 
