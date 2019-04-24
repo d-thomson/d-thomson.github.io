@@ -184,10 +184,6 @@ In this section we will get the feel of working with the basic git workflow. Try
 14. Tag the last commit in the log with "v1.0".
 15. Push all branches to the remote repository.
 
-<details>
-<summary>Solution</summary>
-<p>
-
 ~~~
 # 2
 mkdir my-dir
@@ -230,9 +226,7 @@ git tag v1.0 <hash>
 # 15
 git push origin dev
 git push
-~~~
-</p></details>
-   
+~~~   
 
 ## Tips, Tricks and Interview Questions
 
