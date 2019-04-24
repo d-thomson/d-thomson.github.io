@@ -211,7 +211,7 @@ git commit -m "Added readme"
 # 7, 8
 git checkout -b dev
 touch my_file.rb
-echo puts 'Hello, world!' >> my_file.md
+echo puts 'Hello, world!' >> my_file.rb
 
 # 9
 git add my_file.rb
@@ -237,27 +237,106 @@ git push origin dev
 git push
 ~~~
 
+#### Part II
+In this section, we will open another terminal window to simulate another user making changes to your repository. Each terminal window will simulate a user. Here we will handle a merge conflict. Again, if you get stuck, try using the tutorial as a reference before jumping to the solution.
+
+1. Open a second terminal window.
+2. Create and go to directory `my-dir-2`.
+3. Clone the repo from part I with the custom name `my-repo`.
+4. Switch to the `dev` branch.
+5. Create a file named `my_file_2.rb` with the text `puts 'more ruby files!'`.
+6. Commit the file to your local repo (in the `dev` branch) with the message "Added more ruby files"
+7. Switch to the `master` branch
+8. Merge the `dev` branch to the `master` branch with the message "Merging dev to master, again"
+9. Add another line (below `sort of easy...`) to the `readme.md` file, "nobody is using this, right?"
+10. Commit the file to your local repo (in the `master` branch) with the message "Changes to readme.md"
+11. Push all branches to the remote repository.
+
+At this point, switch back to your initial terminal.
+
+12. Switch to the `master` branch (if not already in it)
+13. Add another line (below `sort of easy...`) to the `readme.md` file, "I'm using this!"
+14. Commit the file to your local repo with the message "Changes to readme.md"
+15. Push the master branch to the remote repository.
+
+At this point, you will need to handle the conflict in readme.md. Do not lose any content and remove all text that was added by git to mark the conflicting pieces. Once the conflict was resolved:
+
+16. Commit the resolved conflict with the message "Final merge with conflicts fixed".
+17. Push all branches to the remote repository.
+
+~~~
+# 2
+mkdir my-dir-2
+cd my-dir-2
+
+# 3, 4
+git clone https://github.com/d-thomson/git-tutorial.git my-repo
+cd my-repo
+
+# 4, 5
+git checkout dev
+touch my_file_2.rb
+echo puts 'more ruby files!' >> my_file_2.rb
+
+# 6
+git add my_file_2.rb
+git commit -m "Added more ruby files"
+
+# 7, 8
+git checkout master
+git merge dev -m "Merging dev to master, again"
+
+# 9, 10
+echo nobody is using this, right? >> readme.md
+git add readme.md
+git commit -m "Changes to readme.md"
+
+# 11
+git push origin dev
+git push
+
+# 12, 13 (Now in terminal one)
+git checkout master
+echo I'm using this! >> readme.md
+
+# 14, 15
+git add readme.md
+git commit -m "Changes to readme.md"
+git push
+
+# resolve the conflict in the file. Remove any git text and leave the 4 lines.
+
+# 16
+git add readme.md
+git commit -m "Final merge with conflicts fixed"
+
+# 17
+git push
+~~~
+
 ## Tips, Tricks and Interview Questions
 
 #### Useful Tips & Tricks
-Git comes with a built-in GUI. It can be launched from the terminal wiht the following command.
+Git comes with a built-in GUI. It can be launched from the terminal wiht the following command. This is very helpful for visualizing branching and viewing the changes within files. It's also great for dealing with merge conflicts.
 ~~~
 gitk
 ~~~
 
-Syntax highlighting for git output
+Syntax highlighting for git output is helpful, and let's be honest it looks pretty.
 ~~~
 git config color.ui true
 ~~~
 
-Show the log on one line per commit
+It's often useful to show the log on one line per commit, in case you want to tag or share the hash with a coworker. To do so we can set this in the git config.
 ~~~
 git config format.pretty oneline
 ~~~
 
-Use interactive adding
+You can see the changes to all files in the working tree, changes to a specific file or the changes between the working directory and staging by using the `git diff` command.
 ~~~
-git add -i
+git diff
+git diff <path_to_file>
+git diff --staged
 ~~~
 
 #### Common Interview Questions
