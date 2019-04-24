@@ -16,6 +16,7 @@ Here are some tips, tricks and common interview questions.
 <summary>Click me!</summary>
   <code>
 this is a line
+    
 this is another line
   </code>
 </details>
