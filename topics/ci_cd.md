@@ -11,3 +11,23 @@ Here is a worked example.
 
 ## Tips, Tricks and Interview Questions
 Here are some tips, tricks and common interview questions.
+
+<details>
+<summary>Click me!</summary>
+
+```js
+const x = 1
+```
+</details>
+
+
+
+<details>
+<summary>Click me!</summary>
+  <p>
+
+```js
+const x = 1
+```
+  </p>
+</details>
