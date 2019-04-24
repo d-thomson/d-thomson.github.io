@@ -138,7 +138,8 @@ git log -1 --author="Jane Doe"
 
 If you want to tag a specific commit hash, you can do so by appending the hash to the tag command.
 ```
-git tag v1.0 
+git tag v1.0 76de721cfe92b081e2508224c21b3ed6e107e148
+```
 
 #### Recovery
 In case you messed up a file and want to start fresh, you can replace local changes for that file using the checkout command. This will replace any changes in your working directory with the content in HEAD. Any changes that are added to your index will be kept, however you can remove these by using the reset command.
