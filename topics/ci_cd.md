@@ -65,8 +65,7 @@ Finally, we'll add a **Post build step** and specify our reporting XML files. Fo
 Finally, click save and click build now similar to the previous section. In the Build output information, you will now see a section named Test Result. Clicking into this, we'll see that we had 1 JUnit test fail. In the next section, we'll see an example of running automated tests from a build job.
 
 #### Automated Testing
-
-#### Pipeline
+In this section we are going to set up an automated test. While setting up thi CI pipeline, the idea is that each build should be verifiable. In our example, if our unit tests pass, then subsequently UI tests should be run.
 
 ## Example
 #### Part I
