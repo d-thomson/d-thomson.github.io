@@ -136,32 +136,98 @@ git log --author=jdoe44@gatech.edu
 git log -1 --author="Jane Doe"
 ```
 
-#### Recovery
-In case you did something wrong, which for sure never happens ;), you can replace local changes using the command
-git checkout -- <filename>
-this replaces the changes in your working tree with the last content in HEAD. Changes already added to the index, as well as new files, will be kept.
+If you want to tag a specific commit hash, you can do so by appending the hash to the tag command.
+```
+git tag v1.0 
 
-If you instead want to drop all your local changes and commits, fetch the latest history from the server and point your local master branch at it like this
+#### Recovery
+In case you messed up a file and want to start fresh, you can replace local changes for that file using the checkout command. This will replace any changes in your working directory with the content in HEAD. Any changes that are added to your index will be kept, however you can remove these by using the reset command.
+```
+git checkout -- myfile.rb
+```
+
+If your local repository is destroyed to the point of no return, there is a way you can drop all local changes and commits. First you need to use the fetch command followed by the reset command. The following will point your local master branch to the latest history from the remote repository.
+```
 git fetch origin
 git reset --hard origin/master
+```
 
-#### Reference
+#### References
 Above was a quick overview of git. The full reference guide can be found here.
 
 [git Documentation](https://git-scm.com/docs)
 
 ## Example
 
-This section contains a worked example to get you more acquainted with git.
+This section contains a worked example to help get you better acquainted with git.
 
-Create a new folder, and initialize a repository.
-<details>
-<summary>Solution</summary><p>
- 
+#### Setup
+If you haven't already, [download and install git](https://git-scm.com/downloads) then [create an account](https://github.com/join) on Github.com, create an empty repository named `git-tutorial`.
+
+#### Part I
+In this section we will get the feel of working with the basic git workflow. Try to complete the following tasks from a terminal window. If you get stuck, try using the tutorial as a reference before jumping to the solution.
+
+1. Open a terminal window.
+2. Create and go to directory `my-dir`.
+3. Clone the empty repo you created in setup with a custom name `my-repo`.
+4. Go to `my-repo`.
+5. Create a file named `readme.md` and add the line "git is easy!" to the file.
+6. Commit the file to your local repo with the message `Added readme"
+7. Create a new branch named `dev` and switch to it.
+8. Create a new file named `my_file.rb` with the content "puts 'Hello, world!'".
+9. Commit the file (should be to the `dev` branch) with the message `Added my_file.rb`.
+10. Switch to the `master` branch
+11. Add another line (below `git is easy`) to the `readme.md` file, `sort of easy...`
+12. Commit the change to your local repo with the message `Changes to readme`
+13. Merge the `dev` branch to the `master` branch with the message `Merging dev to master`
+14. Tag the last commit in the log with "v1.0".
+15. Push all branches to the remote repository.
+
+
+<details><summary>Solution</summary><p>
+
 ~~~
-mkdir git-tutorial
-cd git-tutorial
-git init
+# 2
+mkdir my-dir
+cd my-dir
+
+# 3, 4
+git clone https://github.com/d-thomson/git-tutorial.git my-repo
+cd my-repo
+
+# 5, 6
+touch readme.md
+echo git is easy! >> readme.md
+git add readme.md
+git commit -m "Added readme"
+
+# 7, 8
+git checkout -b dev
+touch my_file.rb
+echo puts 'Hello, world!' >> my_file.md
+
+# 9
+git add my_file.rb
+git commit -m "my_file.rb"
+
+# 10, 11
+git checkout master
+echo sort of easy... >> readme.md
+
+# 12
+git add readme.md
+git commit -m "Changes to readme"
+
+# 13
+git merge dev -m "Merging dev to master"
+
+# 14
+git log -1
+git tag v1.0 <hash>
+
+# 15
+git push origin dev
+git push
 ~~~
 </p></details>
    
@@ -171,10 +237,13 @@ git init
 #### Useful Tips & Tricks
 built-in git GUI
 gitk
+
 use colorful git output
 git config color.ui true
+
 show log on just one line per commit
 git config format.pretty oneline
+
 use interactive adding
 git add -i
 
