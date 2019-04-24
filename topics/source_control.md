@@ -173,7 +173,7 @@ In this section we will get the feel of working with the basic git workflow. Try
 3. Clone the empty repo you created in setup with a custom name `my-repo`.
 4. Go to `my-repo`.
 5. Create a file named `readme.md` and add the line "git is easy!" to the file.
-6. Commit the file to your local repo with the message `Added readme"
+6. Commit the file to your local repo with the message "Added readme"
 7. Create a new branch named `dev` and switch to it.
 8. Create a new file named `my_file.rb` with the content "puts 'Hello, world!'".
 9. Commit the file (should be to the `dev` branch) with the message `Added my_file.rb`.
@@ -188,45 +188,67 @@ In this section we will get the feel of working with the basic git workflow. Try
 <summary>Reveal Solution</summary>
   <code>
 # 2
+
 mkdir my-dir
+
 cd my-dir
 
 # 3, 4
+
 git clone https://github.com/d-thomson/git-tutorial.git my-repo
+
 cd my-repo
 
 # 5, 6
+
 touch readme.md
+
 echo git is easy! >> readme.md
+
 git add readme.md
+
 git commit -m "Added readme"
 
 # 7, 8
+
 git checkout -b dev
+
 touch my_file.rb
+
 echo puts 'Hello, world!' >> my_file.md
 
 # 9
+
 git add my_file.rb
+
 git commit -m "my_file.rb"
 
 # 10, 11
+
 git checkout master
+
 echo sort of easy... >> readme.md
 
 # 12
+
 git add readme.md
+
 git commit -m "Changes to readme"
 
 # 13
+
 git merge dev -m "Merging dev to master"
 
 # 14
+
 git log -1
+
 git tag v1.0 <hash>
 
 # 15
+
 git push origin dev
+
 git push
   </code>
 </details>  
