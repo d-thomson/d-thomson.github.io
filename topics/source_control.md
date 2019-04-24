@@ -253,22 +253,22 @@ git add -i
 
 #### Common Interview Questions
 
-- **What is a conflict in git
+- **What is a conflict in git**
 
 A conflict in git arises when a merge between branches have differing changes on the same line of a file. They can also occur when one branch contains a file deletion however changes are made in the other branch.The auto-merge will fail since precendence cannot be determined.
 
-- **How are conflicts resolved?
+- **How are conflicts resolved?**
 
 The user will need to resolve git conflicts manually before merging branches. First, they must edit the files to fix the conflicting changes. Next, they will need to add the resolved files to their index by running `git add` and finally committing the repaired merge using `git commit`.
 
-- **What is git stash?
+- **What is git stash?**
 
 The stash command takes the current state of your working directory and index, and places them on a stack. The working directory is cleaned and your edits are stashed for later. This will revert you to the HEAD commit, you can view your stash stack with `list`, drop stack entries with `drop` and even checkout stashed entries to a new branch with `branch`.
 
-- **What is the difference between git pull and git fetch?
+- **What is the difference between git pull and git fetch?**
 
 The fetch command will pull all new commits from the desired branch and store them in a new branch in your local repository. To update your local repository with these changes, you will need to merge the fetched branch with the target branch. The git pull command does these operations simultaneously, the pull command will always attempt to auto-merge your target branch with the most recent commit.
 
-- **What does git config do?
+- **What does git config do?**
 
 The config command allows you to set options for your git installation. Repository behavior, user and authentication information, and preferences can all be set through this command.
