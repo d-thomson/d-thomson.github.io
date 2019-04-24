@@ -57,7 +57,7 @@ Once you have a repository created, locally speaking, you have three trees that 
 
 The typical workflow is illustrated below:
 
-![](../img/git_workflow.PNG?raw=true "Typical git workflow")
+![](../img/git_workflow.png?raw=true "Typical git workflow")
 
 The intermediary commands for moving data are described in further detail next, but knowing these distinct locations are crucial to understanding git. 
 
