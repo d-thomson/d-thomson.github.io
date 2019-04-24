@@ -184,54 +184,11 @@ In this section we will get the feel of working with the basic git workflow. Try
 14. Tag the last commit in the log with "v1.0".
 15. Push all branches to the remote repository.
 
-
 <details>
 <summary>Solution</summary>
 <p>
 
-~~~
-# 2
-mkdir my-dir
-cd my-dir
-
-# 3, 4
-git clone https://github.com/d-thomson/git-tutorial.git my-repo
-cd my-repo
-
-# 5, 6
-touch readme.md
-echo git is easy! >> readme.md
-git add readme.md
-git commit -m "Added readme"
-
-# 7, 8
-git checkout -b dev
-touch my_file.rb
-echo puts 'Hello, world!' >> my_file.md
-
-# 9
-git add my_file.rb
-git commit -m "my_file.rb"
-
-# 10, 11
-git checkout master
-echo sort of easy... >> readme.md
-
-# 12
-git add readme.md
-git commit -m "Changes to readme"
-
-# 13
-git merge dev -m "Merging dev to master"
-
-# 14
-git log -1
-git tag v1.0 <hash>
-
-# 15
-git push origin dev
-git push
-~~~
+Hidden!
 </p></details>
    
 
