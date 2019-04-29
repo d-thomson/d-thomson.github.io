@@ -62,3 +62,12 @@ Finally, we'll add a **Post build step** and specify our reporting XML files. Fo
 ![](../img/reporting.PNG?raw=true "reporting XMLs")
 
 Finally, click save and click build now similar to the previous section. In the Build output information, you will now see a section named Test Result. Clicking into this, we'll see that we had 1 JUnit test fail. In the next section, we'll see an example of running automated tests from a build job.
+
+## Test
+Now that you have completed the tutorial, your task is to setup jenkins, add a build job, set up unit tests and add a post build step to generate reports.
+
+## Tips, Tricks and Interview Questions
+* Define a typical use case of Jenkins
+* What advantages does using Jenkins offer?
+* What is the purpose of a plugin?
+* What is the difference between continuous integration and continuous delivery?
