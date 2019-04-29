@@ -117,7 +117,12 @@ SELECT lname.ID FROM table2 AS lname
 The above query will return 1 column with all the IDs from table1 and table2.
 
 #### Group By
-
+The `group by` keyword is used alongside aggregate functions. Aggregate functions perform some sort of aggregation on a column. Some examples of aggregate functions are `count`, `max`, `min`, `sum` and `avg`. In the example below, we count the number of IDs and group by the first name, this way we will get a count of how many people have that name.
+```sql
+SELECT COUNT(fname.ID), fname.first_name
+FROM table1 AS fname
+GROUP BY fname.first_name
+```
 
 ## Example
 Here is a worked example.
