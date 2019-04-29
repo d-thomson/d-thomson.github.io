@@ -128,4 +128,8 @@ GROUP BY fname.first_name
 Here is a worked example.
 
 ## Tips, Tricks and Interview Questions
-Here are some tips, tricks and common interview questions.
+* What are tables and fields?
+* What is a join?
+* What is a database?
+* What is an DBMS?
+* What is an RDBMS?
