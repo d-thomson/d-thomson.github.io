@@ -1,7 +1,7 @@
 # Databases
 
 ## Introduction
-A database is an organized collection of data, generally stored and accessed electronically from a computer system. A database could be as simple as a text file with a list of names. Or it could be as complex as a large, relational database management system, complete with in-built tools to help you maintain the data. In this lesson, we will be focusing on Database Management Systems and SQL.
+A database is an organized collection of data stored in a file or management system. A database could be as simple as a text file with a list of names. Or it could be as complex as a large, relational database management system, complete with in-built tools to help you maintain the data. In this lesson, we will be focusing on Database Management Systems and SQL.
 
 A Database Management System (DBMS), is a software program that enables the creation and management of databases. Generally, these databases will be more complex than the text file/spreadsheet example in the previous lesson. In fact, most of today's database systems are referred to as a Relational Database Management System (RDBMS), because of their ability to store related data across multiple tables.
 
@@ -124,7 +124,7 @@ FROM table1 AS fname
 GROUP BY fname.first_name
 ```
 
-## Example
+## Quiz
 In the following sections, fill in what each SQL statement should be.
 
 Selecting everything from `mytable`
@@ -162,9 +162,18 @@ SELECT ____, ____, ____ FROM table1 AS t1
 ____ table2 t2 ____ ____ = ____;
 ```
 
-## Tips, Tricks and Interview Questions
+## Interview Questions
 * What are tables and fields?
+A table is a set of data that are organized in a model with Columns and Rows. Columns can be categorized as vertical, and Rows are horizontal. A table has specified number of column called fields but can have any number of rows which is called record.
+
 * What is a join?
+A join is used to combine result sets from multiple tables based on a predefined relationship in the column data.
+
 * What is a database?
+Databases are nothing but organized forms of data for easy access, storing, retrieval and managment. This is also known as structured form of data which can be accessed in many ways.
+
 * What is an DBMS?
+A Database Management System (DBMS) is a program that controls creation, maintenance and use of a database. DBMS can be termed as File Manager that manages data in a database rather than saving it in file systems.
+
 * What is an RDBMS?
+RDBMS stands for Relational Database Management System. RDBMS store the data into the collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
