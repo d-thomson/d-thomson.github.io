@@ -125,7 +125,42 @@ GROUP BY fname.first_name
 ```
 
 ## Example
-Here is a worked example.
+In the following sections, fill in what each SQL statement should be.
+
+Selecting everything from `mytable`
+```sql
+____ ____ FROM mytable;
+```
+
+Selecting the `ID` column from `mytable`
+```sql
+____ ____ FROM mytable;
+```
+
+Selecting all the records where the `ID` field is greater than 5.
+```sql
+SELECT ____ FROM mytable
+____ ____ ____ 5;
+```
+
+Use the not keyword to select all records where ID is not equal to 5.
+```sql
+SELECT ____ FROM mytable
+____ ____ ____ 5;
+```
+
+Use the not keyword to select all records where ID is not equal to 5.
+```sql
+SELECT ____ FROM mytable
+____ ____ ____ 5
+____ ____ ____;
+```
+
+First, select the `id` and `name` field from table1 aliased as t1 and the `country` field from `table2` aliased as t2. Use a join on `table2` with the `id` field. 
+```sql
+SELECT ____, ____, ____ FROM table1 AS t1
+____ table2 t2 ____ ____ = ____;
+```
 
 ## Tips, Tricks and Interview Questions
 * What are tables and fields?
