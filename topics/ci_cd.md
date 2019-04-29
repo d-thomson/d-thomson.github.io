@@ -69,6 +69,17 @@ Now that you have completed the tutorial, complete the following tasks:
 
 ## Tips, Tricks and Interview Questions
 * Define a typical use case of Jenkins
+
+Using pipelines to test a pull request. This helps speed up the code review process drastically and helps find bugs quickly.
+
 * What advantages does using Jenkins offer?
+
+Code changes are automatically built, tested, and prepared for a release to production. This automates the dev ops side of things and speeds up integration testing drastically.
+
 * What is the purpose of a plugin?
+
+Plugins are used to enhance Jeknins usability and integrate with various technologies. They are mostly developed by the community and open source. 
+
 * What is the difference between continuous integration and continuous delivery?
+
+With continuous delivery, code changes are automatically built, tested, and prepared for a release to production. Continuous delivery expands upon continuous integration by deploying all code changes to a testing environment and/or a production environment after the build stage.
