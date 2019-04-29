@@ -164,16 +164,21 @@ ____ table2 t2 ____ ____ = ____;
 
 ## Interview Questions
 * What are tables and fields?
+
 A table is a set of data that are organized in a model with Columns and Rows. Columns can be categorized as vertical, and Rows are horizontal. A table has specified number of column called fields but can have any number of rows which is called record.
 
 * What is a join?
+
 A join is used to combine result sets from multiple tables based on a predefined relationship in the column data.
 
 * What is a database?
+
 Databases are nothing but organized forms of data for easy access, storing, retrieval and managment. This is also known as structured form of data which can be accessed in many ways.
 
 * What is an DBMS?
-A Database Management System (DBMS) is a program that controls creation, maintenance and use of a database. DBMS can be termed as File Manager that manages data in a database rather than saving it in file systems.
+
+A Database Management System is a program that controls creation, maintenance and use of a database. DBMS can be termed as File Manager that manages data in a database rather than saving it in file systems.
 
 * What is an RDBMS?
+
 RDBMS stands for Relational Database Management System. RDBMS store the data into the collection of tables, which is related by common fields between the columns of the table. It also provides relational operators to manipulate the data stored into the tables.
