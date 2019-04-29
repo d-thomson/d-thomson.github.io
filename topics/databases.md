@@ -1,11 +1,7 @@
 # Databases
 
 ## Introduction
-A database is an organized collection of data stored in a file or management system. A database could be as simple as a text file with a list of names. Or it could be as complex as a large, relational database management system, complete with in-built tools to help you maintain the data. In this lesson, we will be focusing on Database Management Systems and SQL.
-
-A Database Management System (DBMS), is a software program that enables the creation and management of databases. Generally, these databases will be more complex than the text file/spreadsheet example in the previous lesson. In fact, most of today's database systems are referred to as a Relational Database Management System (RDBMS), because of their ability to store related data across multiple tables.
-
-Data is retrieved, modified or created from a database using a domain specific langauge called SQL, or Structure Query Language. It is particularly useful in handling structured data where there are relations between different entities/variables of the data.
+A database is an organized collection of data stored in a file or management system. A database could be as simple as a delimited flat file or it could be as complex as a large relational database management system with built in tools, functions and more to help you maintain the data. In this lesson, we will be focusing on on learning SQL. Data is retrieved, modified or created from a database using a domain specific langauge called SQL, or Structure Query Language. It is particularly useful in handling structured data where there are relations between different entities/variables of the data.
 
 ## Tutorial
 To interact with a database, we need to learn SQL. This tutorial will cover the basics of SQL.
