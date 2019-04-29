@@ -173,7 +173,7 @@ A join is used to combine result sets from multiple tables based on a predefined
 
 * What is a database?
 
-Databases are nothing but organized forms of data for easy access, storing, retrieval and managment. This is also known as structured form of data which can be accessed in many ways.
+Databases are nothing but organized forms of data for easy creation, deletion, updation and reading. This is also known as structured form of data which can be accessed in many ways.
 
 * What is an DBMS?
 
