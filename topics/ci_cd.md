@@ -45,10 +45,6 @@ This is important since we can see from here where Jenkins is installed and wher
 #### Unit Testing
 As mentioned earlier, Jenkins offers and also ships with many plugins. The one in particular for this section is JUnit. We will be using Jenkins to kick off our unit tests for some Sample Java files. First, download the two Java files and build file below and place them in `<Jenkins Install Dir>/workspace/Tutorial Build Job`, also create a `Reports` directory where we will store our output. If you are unsure of this location, check the console output from the previous section, it will be located in the console output of the build job.
 
-[Sample.java](google.com)
-[SampleTest.java](google.com)
-[build.xml](google.com)
-
 The Sample java file outputs "Hello, world!" to the console but also contains some methods that will be tested using some JUnit tests in the SampleTest.java file. First, navigate to the build job we previously created. Modify the Windows Batch command to first compile Sample.java then run it.
 
 ![](../img/run_cmd.PNG?raw=true "Changing the build job")
@@ -64,7 +60,12 @@ Finally, we'll add a **Post build step** and specify our reporting XML files. Fo
 Finally, click save and click build now similar to the previous section. In the Build output information, you will now see a section named Test Result. Clicking into this, we'll see that we had 1 JUnit test fail. In the next section, we'll see an example of running automated tests from a build job.
 
 ## Test
-Now that you have completed the tutorial, your task is to setup jenkins, add a build job, set up unit tests and add a post build step to generate reports.
+Now that you have completed the tutorial, complete the following tasks:
+1. Download and set up a private jenkins server.
+2. Add a build job and run it. This build job can be a simple Java program
+3. Set up junit tests within your program 
+4. Add a post build step to generate reports based off the unit tests.
+
 
 ## Tips, Tricks and Interview Questions
 * Define a typical use case of Jenkins
